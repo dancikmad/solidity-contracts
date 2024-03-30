@@ -27,6 +27,8 @@ pragma solidity ^0.8.18;
 
 contract ProposalContract {
 
+   uint256 private counter;
+
    struct Proposal {
       string description;         // Description of the proposal
       uint256 approve;            // Number of approve votes
@@ -38,6 +40,11 @@ contract ProposalContract {
       bool is_active;             // This shows if others can vote to our contract
       string title;               // Having a title for proposals makes them easier to identify surronded by long descriptions
    }
-   
+
    mapping(uint256 => Proposal) proposal_history;   // Recordings of previous proposals
+
+   function create(string calldata _description, uint256 _total_vote_to_end, string memory _title) external {
+      counter += 1;
+      proposal_history[counter] = Proposal(_description, 0, 0, 0, _total_vote_to_end, false, true, _title);
+   }
 }
