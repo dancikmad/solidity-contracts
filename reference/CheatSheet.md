@@ -196,8 +196,9 @@ function deposit() public payable {
 
 Functions are executed when a contract receives Ether without a function being called.
 
-**Fallback**: A default function marked with fallback.
-**Receive**: Explicit function to receive Ether, must be marked external payable.
+`Fallback`: A default function marked with fallback.
+
+`Receive`: Explicit function to receive Ether, must be marked external payable.
 
 ```solidity
 fallback() external payable {
@@ -225,8 +226,11 @@ constructor() {
 **20. Visibility**
 
 `public`: Accessible from this and other contracts.
+
 `private`: Accessilbe only from this contract.
+
 `internal`: Like private but also accessible in derived contracts.
+
 `external`: Only accessible from other contracts
 
 ```solidity
@@ -239,6 +243,7 @@ uint private y;
 **21. View and Pure Functions**
 
 `view`: Functions that read the state but don't modify it.
+
 `pure`: Functions that neither read nor modify the state.
 
 ```solidity
