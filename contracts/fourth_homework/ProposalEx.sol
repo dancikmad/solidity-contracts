@@ -66,7 +66,7 @@ contract ProposalContract {
       _;
    }
 
-   modifier newVoter(address, _address) {
+   modifier newVoter(address _address) {
       require(!isVoted(_address), "Address has already voted");
       _;
    }
